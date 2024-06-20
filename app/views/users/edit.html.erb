@@ -1,0 +1,23 @@
+<%= form_with(model: @user, local: true, class: "needs-validation", novalidate: true) do |form| %>
+
+  <div class="mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control", required: true %>
+    <div class="invalid-feedback">
+      Please provide a valid name.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <%= form.label :notes, class: "form-label" %>
+    <%= form.rich_text_area :notes, class: "form-control" %>
+    <div class="invalid-feedback">
+      Please provide valid notes.
+    </div>
+  </div>
+
+  <div class="d-grid gap-2">
+    <%= form.submit 'Submit', class: "btn btn-primary" %>
+  </div>
+
+<% end %>

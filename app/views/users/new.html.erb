@@ -16,6 +16,12 @@
     </div>
   </div>
 
+  <div class="mb-3">
+    <%= form.label :department_id, class: "form-label" %>
+    <%= form.select :department_id, options_for_select(select_department, "name"), class: "form-control", required: true %>
+  </div>
+
+
   <div class="d-grid gap-2">
     <%= form.submit 'Submit', class: "btn btn-primary" %>
   </div>

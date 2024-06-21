@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     end
 
     def create
-        @user = User.new(params.require(:user).permit(:name, :notes))
+        @user = User.new(params.require(:user).permit(:name, :notes, :department_id))
         @user.save
         redirect_to @user
     end
@@ -25,12 +25,13 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        @user.update(params.require(:user).permit(:name, :notes))
+        @user.update(params.require(:user).permit(:name, :notes, :department_id))
         redirect_to @user
     end
 
     def destroy
         @user = User.find(params[:id])
         @user.destroy
+        redirect_to users_path
     end
 end

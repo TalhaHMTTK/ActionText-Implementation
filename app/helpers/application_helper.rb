@@ -1,5 +1,5 @@
 module ApplicationHelper
     def select_department
-        Department.all.map{|d| [d.name]}
+        Department.all.map{|d| [d.name, d.id]}
     end
 end
